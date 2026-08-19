@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+    color: #1f2933;
+}
+
+.player {
+    width: min(760px, 94vw);
+    padding: 30px;
+
+    background: white;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.file-name {
+    min-height: 24px;
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+}
+
+.time-display {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    font-size: 22px;
+    font-variant-numeric: tabular-nums;
+}
+
+.seek-bar {
+    width: 100%;
+    margin-bottom: 28px;
+    cursor: pointer;
+}
+
+.ab-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.35fr;
+    gap: 14px;
+}
+
+button,
+.secondary-button {
+    font-family: inherit;
+}
+
+.large-button {
+    min-height: 110px;
+    border: none;
+    border-radius: 16px;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    background: #2764d8;
+    color: white;
+
+    cursor: pointer;
+}
+
+.large-button:hover {
+    filter: brightness(1.08);
+}
+
+.large-button:active {
+    transform: scale(0.98);
+}
+
+.reset-button {
+    font-size: 27px;
+    background: #ba3a3a;
+}
+
+.markers {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    margin-top: 24px;
+
+    font-size: 23px;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+}
+
+.loop-status {
+    margin-top: 15px;
+    min-height: 24px;
+
+    font-size: 17px;
+    color: #58636f;
+}
+
+.loop-status.active {
+    color: #137333;
+    font-weight: bold;
+}
+
+.secondary-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 26px;
+}
+
+.secondary-button {
+    min-width: 110px;
+    padding: 13px 18px;
+
+    border: 1px solid #aeb6bf;
+    border-radius: 10px;
+
+    background: #f7f8fa;
+    color: #1f2933;
+
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background: #e9edf2;
+}
+
+@media (max-width: 600px) {
+    .player {
+        padding: 20px 14px;
+    }
+
+    .ab-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reset-button {
+        grid-column: 1 / -1;
+        min-height: 82px;
+    }
+
+    .markers {
+        gap: 25px;
+        font-size: 20px;
+    }
+}
+
+.keyboard-hint {
+    display: block;
+    margin-top: 7px;
+
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.adjust-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.adjust-buttons button {
+    padding: 10px 16px;
+    border: 1px solid #aeb6bf;
+    border-radius: 8px;
+    background: #f7f8fa;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.adjust-buttons button:hover {
+    background: #e9edf2;
+}
+
+.speed-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.speed-control span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.speedButton {
+    padding: 9px 13px;
+    border: 1px solid #aeb6bf;
+    border-radius: 8px;
+    background: #f7f8fa;
+    cursor: pointer;
+}
+
+.speedButton.active-speed {
+    font-weight: bold;
+    border: 2px solid #2764d8;
+}
+
+.pause-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.pause-control span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.pauseButton {
+    padding: 9px 13px;
+    border: 1px solid #aeb6bf;
+    border-radius: 8px;
+    background: #f7f8fa;
+    cursor: pointer;
+}
+
+.pauseButton.active-pause {
+    font-weight: bold;
+    border: 2px solid #2764d8;
+}
+
+.repeat-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.repeat-control span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.repeatButton {
+    padding: 9px 13px;
+    border: 1px solid #aeb6bf;
+    border-radius: 8px;
+    background: #f7f8fa;
+    cursor: pointer;
+}
+
+.repeatButton.active-repeat {
+    font-weight: bold;
+    border: 2px solid #2764d8;
+}
+
+.large-button.marker-active {
+    outline: 4px solid #1f2933;
+    transform: scale(1.03);
+}
+
+#buttonA.marker-active {
+    background: #1f8f4e;
+}
+
+#buttonB.marker-active {
+    background: #d97706;
+}
+
+.player-status {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+.player-status.loop-active {
+    color: #137333;
+    font-weight: bold;
+}
