@@ -57,6 +57,31 @@
                 </button>
         </div>
 
+        <div class="secondary-buttons">
+            <label for="fileInput" class="secondary-button">
+                Open
+            </label>
+
+            <input
+                id="fileInput"
+                type="file"
+                accept="audio/*"
+                hidden
+            >
+
+            <button id="playPauseButton" class="secondary-button">
+                Play
+            </button>
+
+            <button id="backButton" class="secondary-button">
+                −5 sec
+            </button>
+
+            <button id="forwardButton" class="secondary-button">
+                +5 sec
+            </button>
+        </div>
+
         <div class="markers">
             <div>
                 A:
@@ -116,30 +141,7 @@
             Viteză 1.00× · Pauză 0s · Repetări ∞
         </div>
 
-        <div class="secondary-buttons">
-            <label for="fileInput" class="secondary-button">
-                Open
-            </label>
-
-            <input
-                id="fileInput"
-                type="file"
-                accept="audio/*"
-                hidden
-            >
-
-            <button id="playPauseButton" class="secondary-button">
-                Play
-            </button>
-
-            <button id="backButton" class="secondary-button">
-                −5 sec
-            </button>
-
-            <button id="forwardButton" class="secondary-button">
-                +5 sec
-            </button>
-        </div>
+        
     </main>
 
     <script src="script.js"></script>
